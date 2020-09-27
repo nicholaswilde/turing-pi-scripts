@@ -11,22 +11,24 @@ $ git clone https://github.com/nicholaswilde/turing-pi-scripts.git
 $ cd turing-pi-scripts
 $ chmod +x turn-on-nodes.sh
 $ chmod +x turn-off-nodes.sh
-$ nano turn-on-nodes.sh
+$ nano nodes.cfg
 ```
-Edit the [I2C CMB registers](https://docs.turingpi.com/turing_pi/children/i2c_cluster_bus/#power-management) of the worker nodes.
+Edit the [I2C CMB registers](https://docs.turingpi.com/turing_pi/children/i2c_cluster_bus/#power-management) of the worker nodes in `nodes.cfg`.
 ```bash
-# 0x04 : Node #2 (Worker 1)
-# 0x08 : Node #3 (Worker 2)
-# 0x10 : Node #4 (Worker 3)
-# 0x80 : Node #5 (Worker 4)
-# 0x40 : Node #6 (Worker 5)
-# 0x20 : Node #7 (Worker 6)
-...
-sudo i2cset -m 0x04 -y 1 0x57 0xf2 0x00
-sleep 2
-sudo i2cset -m 0x04 -y 1 0x57 0xf2 0xff
-sleep 2
-...
+# Node #1 (Master)
+#0x02
+# Node #2 (Worker 1)
+0x04
+# Node #3 (Worker 2)
+0x08
+# Node #4 (Worker 3)
+0x10
+# Node #5 (Worker 4)
+0x80
+# Node #6 (Worker 5)
+0x40
+# Node #7 (Worker 6)
+0x20
 ```
 Do the same for `turn-off-nodes.sh`
 ### Optional
@@ -34,6 +36,8 @@ You can also copy the scripts to the bin folder to easily run them from anywhere
 ```bash
 $ sudo cp turn-on-nodes.sh /usr/bin/turn-on-nodes
 $ sudo cp turn-off-nodes.sh /usr/bin/turn-off-nodes
+# Copy the home folder
+$ cp nodes.cfg ~/.config/
 ```
 
 ### Enable at boot

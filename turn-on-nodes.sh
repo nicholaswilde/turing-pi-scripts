@@ -1,35 +1,37 @@
 #!/bin/bash
 
-# 0x02 : Node #1 (Master)
-# 0x04 : Node #2 (Worker 1)
-# 0x08 : Node #3 (Worker 2)
-# 0x10 : Node #4 (Worker 3)
-# 0x80 : Node #5 (Worker 4)
-# 0x40 : Node #6 (Worker 5)
-# 0x20 : Node #7 (Worker 6)
+file="nodes.cfg"
+# Sleep time
+time=2
 
-sudo i2cset -m 0x04 -y 1 0x57 0xf2 0x00
-sleep 2
-sudo i2cset -m 0x04 -y 1 0x57 0xf2 0xff
-sleep 2
-sudo i2cset -m 0x08 -y 1 0x57 0xf2 0x00
-sleep 2
-sudo i2cset -m 0x08 -y 1 0x57 0xf2 0xff
-sleep 2
-sudo i2cset -m 0x10 -y 1 0x57 0xf2 0x00
-sleep 2
-sudo i2cset -m 0x10 -y 1 0x57 0xf2 0xff
-sleep 2
-sudo i2cset -m 0x80 -y 1 0x57 0xf2 0x00
-sleep 2
-sudo i2cset -m 0x80 -y 1 0x57 0xf2 0xff
-sleep 2
-sudo i2cset -m 0x40 -y 1 0x57 0xf2 0x00
-sleep 2
-sudo i2cset -m 0x40 -y 1 0x57 0xf2 0xff
-sleep 2
-sudo i2cset -m 0x20 -y 1 0x57 0xf2 0x00
-sleep 2
-sudo i2cset -m 0x20 -y 1 0x57 0xf2 0xff
+# Check if run as sudo
+if (( $EUID != 0 )); then
+    echo "Not run as sudo"
+    exit
+fi
 
+# Check if i2c-tools is installed
+if ! command -v i2cset &> /dev/null; then
+    echo "i2c-tools is not installed"
+    exit 1
+fi
 
+# Check the ~/.config dir if file does not exist
+if [ ! -f $file ]; then
+    file="$(eval echo ~${SUDO_USER})/.config/$file"
+fi
+
+if [ ! -f $file ]; then
+    echo "Missing file $file"
+    exit 1
+fi
+
+while IFS= read -r line; do
+    if [[ ! "$line" =~ ^#.*$ ]]; then
+        echo "Processing $line"
+        sudo i2cset -m $line -y 1 0x57 0xf2 0x00
+        sleep $time
+        sudo i2cset -m $line -y 1 0x57 0xf2 0xff
+        sleep $time
+    fi
+done < "$file"
