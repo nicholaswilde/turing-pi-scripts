@@ -49,13 +49,13 @@ ExecStart=/bin/bash /home/pirate/git/turing-pi-scripts/turn-on-nodes.sh
 ```
 ```bash
 # Copy the file
-cp turn-on-nodes.service /etc/systemd/system/turn-on-nodes.service
+sudo cp turn-on-nodes.service /etc/systemd/system/turn-on-nodes.service
 
 # Change the permission of the file
-$ chmod 664 /etc/systemd/system/turn-on-nodes.service
+$ sudo chmod 664 /etc/systemd/system/turn-on-nodes.service
 
 # Enable it at start
-sudo systemctl enable /etc/systemd/system/turn-on-nodes.service
+$ sudo systemctl enable /etc/systemd/system/turn-on-nodes.service
 ```
 
 ## Usage
