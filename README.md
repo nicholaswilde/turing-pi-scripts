@@ -1,6 +1,12 @@
 # Turing Pi Scripts
 Miscellaneous scripts for my [Turing Pi](https://turingpi.com/) setup.
 
+## Prerequisites
+```bash
+$ sudo apt-get update
+$ sudo apt-get install i2c-tools
+```
+
 ## Installation
 On your master node:
 ```bash
