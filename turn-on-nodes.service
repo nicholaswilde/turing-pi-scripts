@@ -1,0 +1,9 @@
+[Unit]
+Description=Turn on the other nodes
+
+[Service]
+User=root
+ExecStart=/bin/bash /home/pirate/git/turing-pi-scripts/turn-on-nodes.sh
+
+[Install]
+WantedBy=multi-user.target
