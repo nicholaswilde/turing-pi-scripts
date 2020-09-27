@@ -75,10 +75,10 @@ $ sudo systemctl enable /etc/systemd/system/turn-on-nodes.service
 ## Usage
 ```bash
 # Turn on all worker nodes
-$ ./turn-on-nodes.sh
+$ sudo ./turn-on-nodes.sh
 
 # Turn off all worker nodes
-$ ./turn-off-nodes.sh
+$ sudo ./turn-off-nodes.sh
 ```
 
 ## Todo
