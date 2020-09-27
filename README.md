@@ -6,9 +6,9 @@ Miscellaneous scripts for my [Turing Pi](https://turingpi.com/) setup.
 
 | Script | Function |
 | --- | --- |
-| turn-on-nodes.sh | Turns all nodes on via the CMB |
-| turn-off-nodes.sh | Turns off all nodes via the CMB |
-| turn-on-nodes.service | systemd service file to run turn-on-nodes.sh at boot |
+| `turn-on-nodes.sh` | Turns all nodes on via the CMB |
+| `turn-off-nodes.sh` | Turns off all nodes via the CMB |
+| `turn-on-nodes.service` | systemd service file to run turn-on-nodes.sh at boot |
 
 ## Prerequisites
 ```bash
