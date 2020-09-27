@@ -1,7 +1,7 @@
 # Turing Pi Scripts
 Miscellaneous scripts for my [Turing Pi](https://turingpi.com/) setup.
 
-:warning: **WARNING**:The register which controls the power to each board is backed by an EEPROM. Don't set all bits in there to 0, otherwise you won't be able to boot and correct it. A fix is to set register 0xF4 to 1 which would send the writes to the shadow SRAM, instead of the EEPROM. 
+:warning: **WARNING**:The register which controls the power to each board is backed by an EEPROM. Don't set all bits in there to 0, otherwise you won't be able to boot and correct it. A fix is to set register 0xF4 to 1 which would send the writes to the shadow SRAM, instead of the EEPROM. A fix for this is to connect an external raspberry pi to the I2C External pins and reset the registers.
 
 ## Prerequisites
 ```bash
