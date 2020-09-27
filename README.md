@@ -44,7 +44,7 @@ You can also copy the scripts to the bin folder to easily run them from anywhere
 ```bash
 $ sudo cp turn-on-nodes.sh /usr/bin/turn-on-nodes
 $ sudo cp turn-off-nodes.sh /usr/bin/turn-off-nodes
-# Copy the home folder
+# Copy the config file to the home folder
 $ cp nodes.cfg ~/.config/
 ```
 
