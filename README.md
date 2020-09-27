@@ -80,3 +80,6 @@ $ ./turn-on-nodes.sh
 # Turn off all worker nodes
 $ ./turn-off-nodes.sh
 ```
+
+## Todo
+- [ ] Verify that the node register values are valid.
