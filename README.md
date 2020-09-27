@@ -36,7 +36,6 @@ Edit the [I2C CMB registers](https://docs.turingpi.com/turing_pi/children/i2c_cl
 # Node #7 (Worker 6)
 0x20
 ```
-Do the same for `turn-off-nodes.sh`
 ### Optional
 You can also copy the scripts to the bin folder to easily run them from anywhere
 ```bash
