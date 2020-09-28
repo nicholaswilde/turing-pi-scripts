@@ -85,5 +85,16 @@ $ sudo ./turn-off-nodes.sh
 $ sudo turn-off-nodes
 ```
 
+## Miscellaneous
+Turn on the power LED connected to GPIO 17 at boot when the master node is on.
+https://www.raspberrypi.org/documentation/configuration/config-txt/gpio.md
+```bash
+#/boot/config.txt
+...
+# Set GPIO17 to be an output set to 1
+gpio=17=op,dh
+...
+```
+
 ## Todo
 - [ ] Verify that the node register values are valid.
