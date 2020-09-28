@@ -1,0 +1,22 @@
+hdmi_force_hotplug=1
+enable_uart=0
+
+# camera settings, see http://elinux.org/RPiconfig#Camera
+start_x=0
+disable_camera_led=1
+
+# Minimize the GPU memory split since we're headless
+gpu_mem=16
+
+# Set GPIO17 to be an output set to 1 to turn on power LED
+gpio=17=op,dh
+
+# Enable audio (added by raspberrypi-sys-mods)
+dtparam=audio=on
+dtparam=i2c_arm=on
+
+# TPi CMB
+dtoverlay=i2c1,pins_44_45
+
+# TPi RTC
+dtoverlay=i2c-rtc,mcp7940x
