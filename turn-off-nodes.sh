@@ -19,9 +19,9 @@ if ! command -v i2cset &> /dev/null; then
     exit 1
 fi
 
-# Check the ~/.config dir if file does not exist
+# Check the /etc/turing-pi-scripts/ dir if file does not exist
 if [ ! -f $DIR/$file ]; then
-    file="$(eval echo ~${SUDO_USER})/.config/$file"
+    file="/etc/turing-pi-scripts/$file"
 else
     file="$DIR/$file"
 fi
