@@ -61,7 +61,7 @@ Edit the [I2C CMB registers](https://docs.turingpi.com/turing_pi/children/i2c_cl
 0x20
 ```
 
-Edit the `listen-for-shutdown.py` file and change the constants to your liking
+Edit the `listen-for-shutdown.py` file and change the constants to your liking. Uncomment `PIN_NO_LED` if you have a power LED.
 ```python
 ...
 # Power button GPIO pin number (GPIO, not actual)
