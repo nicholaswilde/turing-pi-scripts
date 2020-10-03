@@ -132,6 +132,7 @@ $ sudo listen-for-shutdown
 
 ## Wiring Diagram
 ![](https://github.com/nicholaswilde/turing-pi-scripts/raw/develop/images/pinout.png)
+Image created with [Circuit Diagram](https://www.circuit-diagram.org/)
 
 ## Miscellaneous
 Turn on the power LED connected to GPIO 17 at boot when the master node is on.
