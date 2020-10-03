@@ -2,6 +2,7 @@
 Description=Turn on the other nodes
 
 [Service]
+Type=simple
 User=pirate
 ExecStart=/usr/bin/sudo /bin/bash -lc '/home/pirate/git/turing-pi-scripts/turn-on-nodes.sh'
 
