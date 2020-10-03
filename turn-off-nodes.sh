@@ -10,7 +10,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 # Check if run as sudo
 if (( $EUID != 0 )); then
     echo "Not run as sudo"
-    exit
+    exit 1
 fi
 
 # Check if i2c-tools is installed
