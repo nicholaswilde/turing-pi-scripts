@@ -2,6 +2,7 @@
 Description=Listen for the power button
 
 [Service]
+Type=simple
 User=root
 ExecStart=/usr/bin/python3 /home/pirate/git/turing-pi-scripts/listen-for-shutdown.py
 ExecStop=pkill -f /home/pirate/git/turing-pi-scripts/listen-for-shutdown.py
