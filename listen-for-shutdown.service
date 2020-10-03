@@ -1,0 +1,14 @@
+[Unit]
+Description=Listen for the power button
+
+[Service]
+User=root
+ExecStart=/usr/bin/python3 /home/pirate/git/rpi-power-button/listen-for-shutdown.py
+ExecStop=pkill -f /home/pirate/git/rpi-power-button/listen-for-shutdown.py
+WorkingDirectory=/home/pirate/git/rpi-power-button/
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=listen-for-shutdown
+
+[Install]
+WantedBy=multi-user.target
