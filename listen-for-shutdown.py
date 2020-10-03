@@ -8,7 +8,7 @@ import os
 # Power button GPIO pin number (GPIO, not actual)
 PIN_NO_BUTTON = 18
 # Power LED pin number (GPIO, not actual)
-PIN_NO_LED = 17
+#PIN_NO_LED = 17
 # Button hold time (s)
 HOLD_TIME = 2
 # Sleep time between power LED blinks (s)
