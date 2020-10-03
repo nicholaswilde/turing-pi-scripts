@@ -3,9 +3,9 @@ Description=Listen for the power button
 
 [Service]
 User=root
-ExecStart=/usr/bin/python3 /home/pirate/git/rpi-power-button/listen-for-shutdown.py
-ExecStop=pkill -f /home/pirate/git/rpi-power-button/listen-for-shutdown.py
-WorkingDirectory=/home/pirate/git/rpi-power-button/
+ExecStart=/usr/bin/python3 /home/pirate/git/turing-pi-scripts/listen-for-shutdown.py
+ExecStop=pkill -f /home/pirate/git/turing-pi-scripts/listen-for-shutdown.py
+WorkingDirectory=/home/pirate/git/turing-pi-scripts/
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=listen-for-shutdown
