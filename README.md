@@ -147,9 +147,10 @@ $ sudo listen-for-shutdown
 ```
 
 ## Wiring Diagram
-<p align="center"><img src="https://github.com/nicholaswilde/turing-pi-scripts/raw/develop/images/pinout.png"></p>
-
-Image created with [Circuit Diagram](https://www.circuit-diagram.org/)
+<p align="center"><img src="https://github.com/nicholaswilde/turing-pi-scripts/raw/develop/images/pinout.png">
+<br>
+  <em>Image created with <a href="https://www.circuit-diagram.org/">Circuit Diagram</a></em>
+</p>
 
 ## Todo
 - [ ] Verify that the node register values are valid.
