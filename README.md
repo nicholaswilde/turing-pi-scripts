@@ -95,7 +95,7 @@ $ sudo cp listen-for-shutdown.py /usr/bin/listen-for-shutdown
 # Make the turing-pi-scripts
 $ sudo mkdir /etc/turing-pi-scripts
 # Copy the config file to the home folder
-$ cp nodes.cfg /etc/turing-pi-scripts/
+$ sudo cp nodes.cfg /etc/turing-pi-scripts/
 ```
 
 ### Enable at boot
