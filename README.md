@@ -122,7 +122,7 @@ $ sudo chmod 664 /etc/systemd/system/turn-on-nodes.service
 $ sudo chmod 664 /etc/systemd/system/listen-for-shutdown.service
 
 # Enable it at start
-# sudo systemctl daemon-reload
+$ sudo systemctl daemon-reload
 $ sudo systemctl enable /etc/systemd/system/turn-on-nodes.service
 $ sudo systemctl enable /etc/systemd/system/listen-for-shutdown.service
 ```
