@@ -5,13 +5,13 @@ from signal     import pause
 from time       import sleep
 import os
 
-# Power button pin number
+# Power button GPIO pin number (GPIO, not actual)
 PIN_NO_BUTTON = 18
-# Power LED pin number
+# Power LED pin number (actual, not GPIO)
 PIN_NO_LED = 17
-# Button hold time
+# Button hold time (s)
 HOLD_TIME = 2
-# Sleep time between power LED blinks
+# Sleep time between power LED blinks (s)
 SLEEP_TIME = 0.5
 # Path to turn-off-nodes.sh
 SCRIPT_PATH='/home/pirate/git/turing-pi-scripts/turn-off-nodes.sh'
