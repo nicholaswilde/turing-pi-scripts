@@ -19,7 +19,7 @@ fi
 
 # Check the ~/.config dir if file does not exist
 if [ ! -f $DIR/$file ]; then
-    file="$(eval echo ~${SUDO_USER})/.config/$file"
+    file="/etc/turing-pi-scripts/$file"
 else
     file=$DIR/$file
 fi
