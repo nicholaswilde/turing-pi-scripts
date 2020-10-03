@@ -1,5 +1,5 @@
 # Turing Pi Scripts
-Miscellaneous scripts for my [Turing Pi](https://turingpi.com/) setup.
+Miscellaneous scripts for my [Turing Pi](https://turingpi.com/) setup. Turn on and off all nodes with a command or power button and have a power LED.
 
 <img src="https://github.com/nicholaswilde/turing-pi-scripts/raw/develop/images/turing-pi.jpg" width="600">
 
@@ -13,6 +13,11 @@ Miscellaneous scripts for my [Turing Pi](https://turingpi.com/) setup.
 | `turn-on-nodes.service` | systemd service file to run turn-on-nodes.sh at boot |
 | `listen-for-shutdown.py` | Listen for when the power button is held for 2 seconds and turn off the Turing Pi |
 | `listen-for-shutdown.service` | systemd service file to start listen-for-shutdown.py at boot |
+
+## Notes
+- The power LED will blink a few times when holding the power button down for two seconds. All worker nodes will turn off first and a normal shutdown node will be ran on the master node.
+- The power LED will stay on until the master node shuts down completely. 
+- Once the power LED turns off, the power button can then be pressed to turn on the master node which will then turn on the worker nodes.
 
 ## Prerequisites
 ```bash
@@ -145,17 +150,13 @@ $ sudo listen-for-shutdown
 ![](https://github.com/nicholaswilde/turing-pi-scripts/raw/develop/images/pinout.png)
 Image created with [Circuit Diagram](https://www.circuit-diagram.org/)
 
-## Miscellaneous
-Turn on the power LED connected to GPIO 17 at boot when the master node is on.
-https://www.raspberrypi.org/documentation/configuration/config-txt/gpio.md
-```bash
-#/boot/config.txt
-...
-# Set GPIO17 to be an output set to 1
-gpio=17=op,dh
-...
-```
-
 ## Todo
 - [ ] Verify that the node register values are valid.
-- [ ] Create install and uninstall scripts
+- [ ] Create install and uninstall scripts and/or deb package.
+- [ ] Move `nodes.cfg` to `/etc/turing-pi-scripts/` directory.
+
+## Credit
+`listen-for-shutdown` is based off of [lihak's](https://github.com/lihak) [rpi-power-button](https://github.com/lihak/rpi-power-button)
+
+## Author
+The repository was created in 2020 by Nicholas Wilde.
