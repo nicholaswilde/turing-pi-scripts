@@ -3,8 +3,7 @@ Miscellaneous scripts for my [Turing Pi](https://turingpi.com/) setup. Turn on a
 
 <p align="center"><img src="https://github.com/nicholaswilde/turing-pi-scripts/raw/develop/images/turing-pi.jpg" width="600"></p>
 
-| :warning: **WARNING**:The register which controls the power to each board is backed by an EEPROM. Don't set all bits in there to 0, otherwise you won't be able to boot and correct it. A fix is to set register 0xF4 to 1 which would send the writes to the shadow SRAM, instead of the EEPROM. A fix for this is to connect an external raspberry pi to the I2C External pins and reset the registers. |
-| :-- |
+> :warning: **WARNING**:The register which controls the power to each board is backed by an EEPROM. Don't set all bits in there to 0, otherwise you won't be able to boot and correct it. A fix is to set register 0xF4 to 1 which would send the writes to the shadow SRAM, instead of the EEPROM. A fix for this is to connect an external raspberry pi to the I2C External pins and reset the registers. |
 
 | Script | Function |
 | --- | --- |
@@ -116,7 +115,7 @@ WorkingDirectory=/home/pirate/git/turing-pi-scripts/
 ```bash
 # Copy the file
 sudo cp turn-on-nodes.service /etc/systemd/system/turn-on-nodes.service
-sudo cp turn-on-nodes.service /etc/systemd/system/listen-for-shutdown.service
+sudo cp listen-for-shutdown.service /etc/systemd/system/listen-for-shutdown.service
 
 # Change the permission of the files
 $ sudo chmod 664 /etc/systemd/system/turn-on-nodes.service
@@ -126,6 +125,30 @@ $ sudo chmod 664 /etc/systemd/system/listen-for-shutdown.service
 $ sudo systemctl daemon-reload
 $ sudo systemctl enable /etc/systemd/system/turn-on-nodes.service
 $ sudo systemctl enable /etc/systemd/system/listen-for-shutdown.service
+```
+## Test
+On the master node:
+```bash
+# Initial Conditions: All nodes are on and in the ~/git/turing-pi-scripts/ directory.
+$ sudo ./turn-off-nodes.sh
+# All worker nodes should be off (activity lights should stop blinking).
+# Turn on the worker nodes again.
+$ sudo ./turn-on-nodes.sh
+# Turn off the worker nodes again.
+$ sudo ./turn-off-nodes.sh
+# Shutdown the master node.
+$ sudo shutdown now
+# Master node should shut down after a while.
+# Press the power button.
+# The power LED should come on.
+# The master node should power on.
+# The worker nodes should also power on (activity lights start blinking).
+# Hold the power button for two seconds.
+# The power LED should blink a few times.
+# Worker nodes should power down.
+# Master node should power down after awhile.
+# The power LED should turn off.
+# Press the power button to turn on all the nodes.
 ```
 
 ## Usage
@@ -156,7 +179,6 @@ $ sudo listen-for-shutdown
 ## Todo
 - [ ] Verify that the node register values are valid.
 - [ ] Create install and uninstall scripts and/or deb package.
-- [ ] Move `nodes.cfg` to `/etc/turing-pi-scripts/` directory.
 
 ## Credit
 `listen-for-shutdown` is based off of [lihak's](https://github.com/lihak) [rpi-power-button](https://github.com/lihak/rpi-power-button)
