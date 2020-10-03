@@ -1,6 +1,8 @@
 # Turing Pi Scripts
 Miscellaneous scripts for my [Turing Pi](https://turingpi.com/) setup.
 
+<img src="https://github.com/nicholaswilde/turing-pi-scripts/raw/develop/images/turing-pi.jpg" width="600">
+
 | :warning: **WARNING**:The register which controls the power to each board is backed by an EEPROM. Don't set all bits in there to 0, otherwise you won't be able to boot and correct it. A fix is to set register 0xF4 to 1 which would send the writes to the shadow SRAM, instead of the EEPROM. A fix for this is to connect an external raspberry pi to the I2C External pins and reset the registers. |
 | :-- |
 
@@ -84,6 +86,9 @@ $ sudo ./turn-off-nodes.sh
 # or
 $ sudo turn-off-nodes
 ```
+
+## Wiring Diagram
+![](https://github.com/nicholaswilde/turing-pi-scripts/raw/develop/images/pinout.png)
 
 ## Miscellaneous
 Turn on the power LED connected to GPIO 17 at boot when the master node is on.
