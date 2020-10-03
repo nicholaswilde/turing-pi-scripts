@@ -59,9 +59,9 @@ Edit the [I2C CMB registers](https://docs.turingpi.com/turing_pi/children/i2c_cl
 Edit the `listen-for-shutdown.py` file and change the constants to your liking
 ```python
 ...
-# Power button GPIO pin number (GPIO, not actual)
+# Power button GPIO pin number (actual, not GPIO)
 PIN_NO_BUTTON = 18
-# Power LED pin number (actual, not GPIO)
+# Power LED pin number (GPIO, not actual)
 PIN_NO_LED = 17
 # Button hold time (s)
 HOLD_TIME = 2
@@ -69,6 +69,15 @@ HOLD_TIME = 2
 SLEEP_TIME = 0.5
 # Path to turn-off-nodes.sh
 SCRIPT_PATH='/home/pirate/git/turing-pi-scripts/turn-off-nodes.sh'
+...
+```
+[Turn on the power LED connected to GPIO 17 at boot](https://www.raspberrypi.org/documentation/configuration/config-txt/gpio.md) when the master node is on.
+
+```bash
+#/boot/config.txt
+...
+# Set GPIO17 to be an output set to 1
+gpio=17=op,dh
 ...
 ```
 
@@ -125,9 +134,11 @@ $ sudo ./turn-off-nodes.sh
 # or
 $ sudo turn-off-nodes
 
+# Start listen-for-shutdown.py
 $ sudo ./listen-for-shutdown.py
 # or
 $ sudo listen-for-shutdown
+# Hold the power button for two seconds and wait for the power LED to blink
 ```
 
 ## Wiring Diagram
@@ -147,3 +158,4 @@ gpio=17=op,dh
 
 ## Todo
 - [ ] Verify that the node register values are valid.
+- [ ] Create install and uninstall scripts
