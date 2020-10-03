@@ -42,7 +42,7 @@ def main():
         sys.exit('turn-off-nodes.sh file does not exist')
     button = Button(PIN_NO_BUTTON, hold_time=HOLD_TIME)
     button.when_held = longpress
-    print("Staring listen-for-shutdown")
+    print("Starting listen-for-shutdown")
     pause()
 
 if __name__ == "__main__":
