@@ -92,9 +92,10 @@ You can also copy the scripts to the bin folder to easily run them from anywhere
 $ sudo cp turn-on-nodes.sh /usr/bin/turn-on-nodes
 $ sudo cp turn-off-nodes.sh /usr/bin/turn-off-nodes
 $ sudo cp listen-for-shutdown.py /usr/bin/listen-for-shutdown
+# Make the turing-pi-scripts
+$ sudo mkdir /etc/turing-pi-scripts
 # Copy the config file to the home folder
-$ cp nodes.cfg ~/.config/
-# Note: adding the config file to the home folder currently doesn't work with listen-for-shutdown.py
+$ cp nodes.cfg /etc/turing-pi-scripts/
 ```
 
 ### Enable at boot
