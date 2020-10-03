@@ -93,7 +93,7 @@ $ sudo cp turn-off-nodes.sh /usr/bin/turn-off-nodes
 $ sudo cp listen-for-shutdown.py /usr/bin/listen-for-shutdown
 # Make the turing-pi-scripts
 $ sudo mkdir /etc/turing-pi-scripts
-# Copy the config file to the home folder
+# Copy the config file to the /etc/turing-pi-scripts/ directory
 $ sudo cp nodes.cfg /etc/turing-pi-scripts/
 ```
 
