@@ -6,7 +6,7 @@ Section: utils
 
 Package: turing-pi-scripts
 Priority: extra  
-Architecture: armhf
+Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}  
 Description: Miscellaneous scripts for my Turing Pi setup
   Turn on and off all nodes with a command or power button and have a power LED.
