@@ -1,0 +1,2 @@
+- name: Build Debian package: Buster
+  uses: nylas/build-dpkg-buster@v1
