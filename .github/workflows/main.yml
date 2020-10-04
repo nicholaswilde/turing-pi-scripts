@@ -11,6 +11,6 @@ jobs:
         with:
           name: turing-pi-scripts
           version: 0.1
-          arch: armhf
+          arch: armv7
           format: deb
           package: package.yml
