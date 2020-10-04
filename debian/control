@@ -1,0 +1,12 @@
+Source: turing-pi-scripts
+Maintainer: Nicholas Wilde <ncwilde43@gmail.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 0.1
+Section: utils
+
+Package: turing-pi-scripts
+Priority: extra  
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}  
+Description: Miscellaneous scripts for my Turing Pi setup
+  Turn on and off all nodes with a command or power button and have a power LED.
