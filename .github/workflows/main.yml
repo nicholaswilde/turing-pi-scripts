@@ -7,7 +7,7 @@ jobs:
   build-deb:
     runs-on: ubuntu-latest
     steps:
-      - uses: kentik/pkg@v1
+      - uses: kentik/pkg@v1.0.0-rc6
         with:
           name: turing-pi-scripts
           version: 0.1
