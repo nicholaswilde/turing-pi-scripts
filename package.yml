@@ -1,0 +1,19 @@
+meta:
+  description: turing-pi-scripts
+  vendor: Me
+  maintainer: Me
+files:
+  "/usr/bin/listen-for-shutdown":
+    file: listen-for-shutdown.py
+    mode: "0755"
+    user: "root"
+  "/etc/turing-pi-scripts/nodes.cfg":
+    file: nodes.cfg
+    mode: "0644"
+    user: "pirate"
+    keep: true
+units:
+  - etc/systemd/system/listen-for-shutdown.service
+scripts:
+  "post-install": scripts/post-inst
+user: pirate
