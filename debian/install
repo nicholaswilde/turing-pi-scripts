@@ -1,0 +1,3 @@
+listen-for-shutdown.py usr/bin
+turn-on-nodes.sh usr/bin
+turn-off-nodes.sh usr/bin
