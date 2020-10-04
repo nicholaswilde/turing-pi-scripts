@@ -13,4 +13,4 @@ jobs:
           version: 0.1
           arch: armv7
           format: deb
-          package: package.yml
+          package: package.yaml
